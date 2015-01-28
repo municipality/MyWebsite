@@ -1,0 +1,202 @@
+@CHARSET "ISO-8859-1"; 
+/****************CSS RESET********/
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+body{line-height:1}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+nav ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}
+ins{background-color:#ff9;color:#000;text-decoration:none}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
+del{text-decoration:line-through}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
+input,select{vertical-align:middle}
+/****************END CSS RESET********/
+
+
+body {
+	background: #ffffff;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: #0000ff;
+} /*link color for <a href..> </a> */
+
+#header {
+	width: 100%;
+	height: auto;
+	/*height: 635px;*/
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+/*for text in images, make image position relative
+					  text position absolute
+					  */
+#introimage {
+	position: relative;
+	width: 100%;
+}
+h1 {
+	position: absolute;
+	top: 400px;/*400px from top of the image*/
+	left: 0px;
+	width: 100%;
+	/*line-height: 68px;*/
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 64px;
+
+}
+h1 span {
+	float: left;
+	clear: left;
+	
+	color: white;
+	letter-spacing: -1px;
+	background: rgb(0, 0, 0);
+	background: rgba(0, 0, 0, 0.7);
+	padding: 10px;
+}
+
+#nav {
+	float: left;
+	width: 200px;
+	height: 100vh; /*vh = % viewport height */
+	background: #ff0000;
+	position: fixed;
+}
+
+#navholder {
+	width: 100%;
+	height: 50px;
+	
+}
+
+#topnav {
+	/*position: fixed;
+	top: 0;*/
+	width: 100%;
+	color: #ffffff;
+	height: 35px;
+	text-align: center;
+	padding-top: 15px;
+	/*Add shadow to bottom of the bar*/
+	-webkit-box-shadow: 0px 0px 8px 0px #000000;
+	-moz-box-shadow: 0px 0px 8px 0px #000000;
+	box-shadow: 0px 0px 8px 0px #000000;
+	/*Add transparent background */
+	background-color: rgba(1, 1, 1, 0.8);
+	color: rgba(1, 1, 1, 0.8);
+}
+
+#topnav ul {
+	margin: 0;
+	padding: 0;
+}
+
+#topnav ul li {
+	/*diplay: inline-block allows arrange in a horizontal line without using float */
+	display: inline-block;
+	list-style-type: none;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s;
+}
+
+#topnav ul li a {
+	font-size: 14px;
+	padding-left: 15px;
+	padding-right: 15px;
+	color: white;
+	text-decoration: none;
+}
+
+#topnav ul li a .caret{
+	/*draws a down triangle in css*/
+	border-top: 4px solid #aaa;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
+	content: "";
+	display: inline-block;
+	height: 0;
+	width: 0;
+	vertical-align: middle;
+	
+	/*-webkit-transition: color 0.1s linear;
+	-moz-transition: color 0.1s linear;
+	-o-transition: color 0.1s linear;
+	  transition: color 0.1s linear;*/ 
+}
+
+#topnav ul li div {
+	background-color: rgb( 40, 44, 47 );
+	border-top: 0;
+	border-radius: 0 0 4px 4px;
+	box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
+	/*Hidden until hovered over*/
+	display: none;
+	margin: 0;
+	opacity: 0;
+	position: absolute;
+	width: 165px;
+	visibility: hidden;
+	z-index: 100;
+	
+	-webkit-transiton: opacity 0.2s;
+	-moz-transition: opacity 0.2s;
+	-ms-transition: opacity 0.2s;
+	-o-transition: opacity 0.2s;
+	-transition: opacity 0.2s;
+}
+
+#topnav ul li:hover div {
+	display: block;
+	opacity: 0.9;
+	visibility: visible;
+}
+
+#topnav ul li div ul li {
+	display: block;
+}
+
+#topnav ul li div ul li:hover {
+	background: rgba(0,0,0,1);
+}
+
+#topnav a:hover {
+	color: grey;
+	
+}
+
+#main {
+	width: 100%;
+	
+}
+
+#intro {
+	width: 100%;
+	height: 800px;
+	padding: 0;
+}
+
+#footer {
+	width: 100%;
+	height: 70px;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: #000000;
+	
+	color: #ffffff;
+}
+
+
+

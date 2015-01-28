@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+
+<title>Blee</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+
+<script type="text/javascript">
+	function hideTopNav() {
+		$("#topnav").slideUp(150, function() {
+
+		});
+	}
+
+	/*
+	$(document).ready(func..)
+	A page cannot be manipulated safely until the document is ready.
+	Code will only run once the page Document Object Model (DOM) is
+	ready for JS code to be executed.
+	Contrary to $(window).load(func..), which will only run once the
+	entire page (image or iframes), not just the DOM, is ready.
+	 */
+
+	var navbarpos;
+	$(window).load(function() {
+		navbarpos = $("#header").outerHeight();
+	});
+
+	$(window).scroll(function() {
+		var scroll = $(window).scrollTop();
+		console.log(scroll);
+		var nav = $("#topnav");
+		if (scroll > navbarpos) {
+			nav.css("top", "0px");
+			nav.css("position", "fixed");
+			nav.css("opacity", "0.8");
+		} else {
+			nav.css("position", "");
+			nav.css("opacity", "1");
+		}
+	});
+</script>
+
+</head>
+<body>
+
+	<header id="header">
+		<div id="introimage">
+			<img src="images/intro-edit.png" style="width: 100%; height: auto;">
+			<h1>
+				<span>I AM</span> <span>B. LEE</span>
+			</h1>
+		</div>
+	</header>
+	
+	<div id="navholder">
+		<div id="topnav">
+			<ul>
+				<li><a href="#">Intro</a></li>
+				<li><a href="#">Who I Am<span class="caret"></span></a>
+					<div>
+						<ul>
+							<li><a href="#">Singer</a></li>
+							<li><a href="#">Programmer</a></li>
+							<li><a href="#">Leader</a></li>
+
+						</ul>
+					</div></li>
+
+				<li><a href="#" onclick="hideTopNav()">Hide</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- 	<nav id="nav">
+		<ul id="navlist">
+			<li><a href="https://facebook.com/municipality">Facebook</a></li>
+
+		</ul>
+	</nav> -->
+
+
+
+
+
+
+	<div id="main">
+		<section id="intro">
+			<p>Content Goes Here</p>
+			<a href="http://google.com">Check out here!</a>
+
+		</section>
+
+	</div>
+
+	<div id="footer">
+		<p>hi</p>
+	</div>
+
+
+
+</body>
+</html>
